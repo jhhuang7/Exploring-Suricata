@@ -34523,3 +34523,894 @@ flow.spare                                 | Total                     | 10000
 tcp.memuse                                 | Total                     | 786432
 tcp.reassembly_memuse                      | Total                     | 12320544
 flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:00 (uptime: 0d, 00h 37m 55s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:07 (uptime: 0d, 00h 38m 02s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:14 (uptime: 0d, 00h 38m 09s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:22 (uptime: 0d, 00h 38m 17s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:29 (uptime: 0d, 00h 38m 24s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:36 (uptime: 0d, 00h 38m 31s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:43 (uptime: 0d, 00h 38m 38s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:50 (uptime: 0d, 00h 38m 45s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:21:57 (uptime: 0d, 00h 38m 52s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:22:04 (uptime: 0d, 00h 38m 59s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:22:11 (uptime: 0d, 00h 39m 06s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:22:18 (uptime: 0d, 00h 39m 13s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:22:25 (uptime: 0d, 00h 39m 20s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:22:32 (uptime: 0d, 00h 39m 27s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:22:39 (uptime: 0d, 00h 39m 34s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:22:46 (uptime: 0d, 00h 39m 41s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:22:53 (uptime: 0d, 00h 39m 48s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:00 (uptime: 0d, 00h 39m 55s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:07 (uptime: 0d, 00h 40m 02s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:14 (uptime: 0d, 00h 40m 09s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:21 (uptime: 0d, 00h 40m 16s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:28 (uptime: 0d, 00h 40m 23s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:35 (uptime: 0d, 00h 40m 30s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:42 (uptime: 0d, 00h 40m 37s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:49 (uptime: 0d, 00h 40m 44s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:23:56 (uptime: 0d, 00h 40m 51s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:24:03 (uptime: 0d, 00h 40m 58s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:24:10 (uptime: 0d, 00h 41m 05s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:24:17 (uptime: 0d, 00h 41m 12s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/14/2020 -- 12:24:19 (uptime: 0d, 00h 41m 14s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 155
+decoder.pkts                               | Total                     | 155
+decoder.bytes                              | Total                     | 22560
+decoder.ipv4                               | Total                     | 38
+decoder.ipv6                               | Total                     | 76
+decoder.ethernet                           | Total                     | 155
+decoder.udp                                | Total                     | 65
+decoder.icmpv4                             | Total                     | 19
+decoder.icmpv6                             | Total                     | 30
+decoder.avg_pkt_size                       | Total                     | 145
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 19
+flow_mgr.new_pruned                        | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:35:55 (uptime: 0d, 00h 00m 08s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154304
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:36:03 (uptime: 0d, 00h 00m 16s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 1
+decoder.pkts                               | Total                     | 1
+decoder.bytes                              | Total                     | 342
+decoder.ipv4                               | Total                     | 1
+decoder.ethernet                           | Total                     | 1
+decoder.udp                                | Total                     | 1
+decoder.avg_pkt_size                       | Total                     | 342
+decoder.max_pkt_size                       | Total                     | 342
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154600
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:36:10 (uptime: 0d, 00h 00m 23s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 2
+decoder.pkts                               | Total                     | 2
+decoder.bytes                              | Total                     | 449
+decoder.ipv4                               | Total                     | 1
+decoder.ipv6                               | Total                     | 1
+decoder.ethernet                           | Total                     | 2
+decoder.udp                                | Total                     | 2
+decoder.avg_pkt_size                       | Total                     | 224
+decoder.max_pkt_size                       | Total                     | 342
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154896
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:36:17 (uptime: 0d, 00h 00m 30s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 3
+decoder.pkts                               | Total                     | 3
+decoder.bytes                              | Total                     | 791
+decoder.ipv4                               | Total                     | 2
+decoder.ipv6                               | Total                     | 1
+decoder.ethernet                           | Total                     | 3
+decoder.udp                                | Total                     | 3
+decoder.avg_pkt_size                       | Total                     | 263
+decoder.max_pkt_size                       | Total                     | 342
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154896
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:36:24 (uptime: 0d, 00h 00m 37s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 19
+decoder.pkts                               | Total                     | 22
+decoder.bytes                              | Total                     | 4416
+decoder.ipv4                               | Total                     | 4
+decoder.ipv6                               | Total                     | 18
+decoder.ethernet                           | Total                     | 22
+decoder.udp                                | Total                     | 14
+decoder.icmpv6                             | Total                     | 8
+decoder.avg_pkt_size                       | Total                     | 200
+decoder.max_pkt_size                       | Total                     | 342
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7156080
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:36:31 (uptime: 0d, 00h 00m 44s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 50
+decoder.pkts                               | Total                     | 52
+decoder.bytes                              | Total                     | 6848
+decoder.ipv4                               | Total                     | 13
+decoder.ipv6                               | Total                     | 24
+decoder.ethernet                           | Total                     | 52
+decoder.udp                                | Total                     | 18
+decoder.icmpv4                             | Total                     | 9
+decoder.icmpv6                             | Total                     | 10
+decoder.avg_pkt_size                       | Total                     | 131
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 9
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7156080
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:36:38 (uptime: 0d, 00h 00m 51s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 66
+decoder.pkts                               | Total                     | 66
+decoder.bytes                              | Total                     | 8025
+decoder.ipv4                               | Total                     | 18
+decoder.ipv6                               | Total                     | 25
+decoder.ethernet                           | Total                     | 66
+decoder.udp                                | Total                     | 20
+decoder.icmpv4                             | Total                     | 13
+decoder.icmpv6                             | Total                     | 10
+decoder.avg_pkt_size                       | Total                     | 121
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 13
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7156080
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:36:45 (uptime: 0d, 00h 00m 58s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 67
+decoder.pkts                               | Total                     | 67
+decoder.bytes                              | Total                     | 8367
+decoder.ipv4                               | Total                     | 19
+decoder.ipv6                               | Total                     | 25
+decoder.ethernet                           | Total                     | 67
+decoder.udp                                | Total                     | 21
+decoder.icmpv4                             | Total                     | 13
+decoder.icmpv6                             | Total                     | 10
+decoder.avg_pkt_size                       | Total                     | 124
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 13
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7156080
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:36:52 (uptime: 0d, 00h 01m 05s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 71
+decoder.pkts                               | Total                     | 71
+decoder.bytes                              | Total                     | 8591
+decoder.ipv4                               | Total                     | 20
+decoder.ipv6                               | Total                     | 25
+decoder.ethernet                           | Total                     | 71
+decoder.udp                                | Total                     | 21
+decoder.icmpv4                             | Total                     | 14
+decoder.icmpv6                             | Total                     | 10
+decoder.avg_pkt_size                       | Total                     | 121
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 14
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7155488
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:37:00 (uptime: 0d, 00h 01m 13s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 73
+decoder.pkts                               | Total                     | 73
+decoder.bytes                              | Total                     | 9040
+decoder.ipv4                               | Total                     | 21
+decoder.ipv6                               | Total                     | 26
+decoder.ethernet                           | Total                     | 73
+decoder.udp                                | Total                     | 23
+decoder.icmpv4                             | Total                     | 14
+decoder.icmpv6                             | Total                     | 10
+decoder.avg_pkt_size                       | Total                     | 123
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 14
+flow_mgr.new_pruned                        | Total                     | 3
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7155192
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:37:07 (uptime: 0d, 00h 01m 20s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 73
+decoder.pkts                               | Total                     | 73
+decoder.bytes                              | Total                     | 9040
+decoder.ipv4                               | Total                     | 21
+decoder.ipv6                               | Total                     | 26
+decoder.ethernet                           | Total                     | 73
+decoder.udp                                | Total                     | 23
+decoder.icmpv4                             | Total                     | 14
+decoder.icmpv6                             | Total                     | 10
+decoder.avg_pkt_size                       | Total                     | 123
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 14
+flow_mgr.new_pruned                        | Total                     | 4
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154896
+------------------------------------------------------------------------------------
+Date: 9/17/2020 -- 16:37:14 (uptime: 0d, 00h 01m 27s)
+------------------------------------------------------------------------------------
+Counter                                    | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                     | Total                     | 73
+decoder.pkts                               | Total                     | 73
+decoder.bytes                              | Total                     | 9040
+decoder.ipv4                               | Total                     | 21
+decoder.ipv6                               | Total                     | 26
+decoder.ethernet                           | Total                     | 73
+decoder.udp                                | Total                     | 23
+decoder.icmpv4                             | Total                     | 14
+decoder.icmpv6                             | Total                     | 10
+decoder.avg_pkt_size                       | Total                     | 123
+decoder.max_pkt_size                       | Total                     | 342
+detect.alert                               | Total                     | 14
+flow_mgr.new_pruned                        | Total                     | 4
+flow.spare                                 | Total                     | 10000
+tcp.memuse                                 | Total                     | 786432
+tcp.reassembly_memuse                      | Total                     | 12320544
+flow.memuse                                | Total                     | 7154896
