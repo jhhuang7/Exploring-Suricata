@@ -8,7 +8,7 @@ if '__main__' == __name__:
 	net = Mininet(link=TCLink)
 	
 	topos = ["simple", "mesh", "tree"]
-	mode = 0 # Change this ranging from 0 to 2
+	mode = 2  # Change this ranging from 0 to 2
 	topo = topos[mode]
 	
 	if topo == "simple":
@@ -60,9 +60,10 @@ if '__main__' == __name__:
 		net.addLink(h3, s1)
 	
 	c0 = net.addController('c0', controller=Controller)
-	Intf('eth1', node=h3)
+	Intf('eth1', node=h3)  # May need to change 'eth' depending on the VM's internet connection
 	net.build()
 	c0.start()
 	s1.start([c0])
 	CLI(net)
 	net.stop();
+
