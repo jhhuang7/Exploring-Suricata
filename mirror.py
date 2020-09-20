@@ -8,7 +8,7 @@ if '__main__' == __name__:
 	net = Mininet(link=TCLink)
 	
 	topos = ["simple", "mesh", "tree"]  # May add most hosts and switches for more complexity for each topo
-	mode = 0  # Change this ranging from 0 to 2
+	mode = 2  # Change this ranging from 0 to 2
 	topo = topos[mode]
 	
 	hosts = 0
