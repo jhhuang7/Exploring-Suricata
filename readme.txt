@@ -21,10 +21,8 @@ sit on and all the trafic through the switch gets mirrored to it.
 
 3. in mininet run xterm h3
 
-4. in the xterm run sudo ./cmds.sh  (this will set up the port mirroring and run suricata)
+4. in the xterm run sudo ./cmds.sh  (run suricata)
 
-
-5. from another terminal in portmirroring run sudo python3.7 output.py
 
 In suricata(xterm terminal) you should something like reconnected socket , i've got suricata set up atm to talk to output.py through 
 that eve.sock file/socket.
