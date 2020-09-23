@@ -20,6 +20,7 @@ lastA = None
 dosProtection = False
 while True:
 	line = conn.recv(10000).decode("utf-8")
+	# Test
 	try:
 		parsed = json.loads(line)
 		if (parsed['proto'] == u'ICMP' and parsed["src_ip"]=="10.0.0.1"):
