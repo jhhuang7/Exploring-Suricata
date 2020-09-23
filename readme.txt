@@ -19,6 +19,7 @@ THE RULSETS THAT ARE USED ARE FOUND IN THE RULES FOLDER RULES
  - Currently its matching 10 pkts in 60 seconds from 10.0.0.1 before alerting
 
 
+Put rulset in  ~/suricata-3.1/rules/
 
 
 STEPS FOR SURICATA
