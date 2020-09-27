@@ -85,4 +85,4 @@ if '__main__' == __name__:
 		s5.start([c0])
 	
 	CLI(net)
-	net.stop();
+	net.stop()
