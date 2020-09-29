@@ -4,6 +4,7 @@ import datetime
 import os
 import json
 
+os.system("sudo ovs-ofctl del-flows s1")
 
 
 os.system("rm eve.sock")
@@ -18,17 +19,64 @@ conn,addr =  sock.accept()
 
 lastA = None
 dosProtection = False
+# sourceIp = str(parsed['src_ip'])
+# destIp = str(parsed['dest_ip'])
+# os.system("sudo ovs-ofctl del-flows s1 nw_src="+sourceIp)
+# os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src="+sourceIp+",actions=drop")
+
+wlist = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5","10.0.0.6"}
+blist = {}
+hardTimeOut = 60;
 while True:
-	line = conn.recv(10000).decode("utf-8")
+	line = conn.recv(1000).decode("utf-8")
 	try:
-		parsed = json.loads(line)
+		lines =  line.split('\n')
+		for i in lines:
+			try:
+				if (i == '') :
+					continue
+				parsed = json.loads(i)
 
-		if (parsed['proto'] == u'ICMP' and dosProtection == False) :
- 			os.system("sudo ovs-ofctl del-flows s1")
-			os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src=10.0.0.1,actions=drop")
-			os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src=10.0.0.5,actions=drop")
-			dosProtection = True
 
+				if (parsed['proto'] == u'ICMP') :
+					srcIP = parsed['src_ip']
+					print(parsed["timestamp"])
+					date = datetime.datetime.strptime(parsed["timestamp"], "%Y-%m-%dT%H:%M:%S.%f%z")
+					if (srcIP in blist) :
+						diff = date - blist[srcIP]
+						if diff.total_seconds() >= hardTimeOut:
+							del blist[srcIP]
+						else:
+							continue
+
+					if srcIP not in wlist :
+						os.system("sudo ovs-ofctl del-flows s1")
+
+						blist[srcIP] = date
+						for key in blist:
+							os.system("sudo ovs-ofctl add-flow s1 hard_timeout=60,dl_type=0x0800,nw_src="+str(key)+",actions=drop")
+						
+						print('------------------------')
+						print('Current Flow Table for s1')
+						os.system("sudo ovs-ofctl dump-flows s1")
+					
+
+			except Exception as e:
+				continue
+			# try:
+
+			# except:
+			# 	print("HERE!")
+ 			# srcIP = str(parsed['src_ip'])
+			# if srcIP not in blist:
+			# 	os.system("sudo ovs-ofctl del-flows s1")
+			# 	blist[srcIP] = True
+				
+			# 	print("Readding" + blist)
+			# 	for key in blist:
+			# 		os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src="+str(srcIP)+",actions=drop")
+
+				
 			
 		# if (parsed['proto'] == u'ICMP' and parsed["src_ip"]=="10.0.0.1"):
 		# 	if line == "proto":
@@ -52,7 +100,7 @@ while True:
 
 
 	except Exception as e:
-		#print(e)
+		print(e)
 		#UNCOMMENT TO PRINT ERRORS
 		continue
 

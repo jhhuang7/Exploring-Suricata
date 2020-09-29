@@ -19,6 +19,7 @@ if '__main__' == __name__:
 	h4  = net.addHost('h4')
 	h5  = net.addHost('h5')
 	h6  = net.addHost('h6')
+	h7  = net.addHost('h7')
 
 	s1 = net.addSwitch('s1')
 	s2 = net.addSwitch('s2')
@@ -32,6 +33,7 @@ if '__main__' == __name__:
 
 	net.addLink(h1, s1)
 	net.addLink(h3, s1)
+	net.addLink(h7, s1)
 
 	net.addLink(s1, s2)
 	net.addLink(s2, s3)	
