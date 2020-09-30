@@ -22,27 +22,33 @@ while True:
 	line = conn.recv(10000).decode("utf-8")
 	try:
 		parsed = json.loads(line)
-		if (parsed['proto'] == u'ICMP' and parsed["src_ip"]=="10.0.0.1"):
-			if line == "proto":
-				continue
-			else:
-				a = datetime.datetime.strptime(parsed["timestamp"], "%Y-%m-%dT%H:%M:%S.%f%z")
-				if lastA == None:
-					lastA = a
-					continue
-				else:
-					
-					diff =  a - lastA
-					print("Difference is")
-					print(diff.total_seconds())
-					lastA = a
 
-					if (diff.total_seconds() < 1):
-						if not dosProtection:						
-							print("Adding flow")
-							os.system("sudo ovs-ofctl del-flows s1")
-							os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=120,nw_src=10.0.0.1,actions=drop")
-							os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=120,nw_src=10.0.0.2,actions=drop")
+		if (parsed['proto'] == u'ICMP' and dosProtection == False) :
+ 			os.system("sudo ovs-ofctl del-flows s1")
+			os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src=10.0.0.1,actions=drop")
+			os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src=10.0.0.5,actions=drop")
+			dosProtection = True
+
+			
+		# if (parsed['proto'] == u'ICMP' and parsed["src_ip"]=="10.0.0.1"):
+		# 	if line == "proto":
+		# 		continue
+		# 	else:
+		# 		a = datetime.datetime.strptime(parsed["timestamp"], "%Y-%m-%dT%H:%M:%S.%f%z")
+		# 		if lastA == None:
+		# 			lastA = a
+		# 			continue
+		# 		else:
+		# 			diff =  a - lastA
+		# 			print("Difference is")
+		# 			print(diff.total_seconds())
+		# 			lastA = a
+
+		# 			if (diff.total_seconds() < 1):
+		# 				if not dosProtection:						
+		# 					print("Adding flow")
+
+		# 					os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=120,nw_src=10.0.0.2,actions=drop")
 
 
 	except Exception as e:

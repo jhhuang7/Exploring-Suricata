@@ -1,5 +1,8 @@
 Here's the file with all the scripts that I've used so far, you'll also see in the vm config that there's two network cards.
 
+EVERYTHING IS HARDCODED IN THIS EXAMPLE
+
+DOS PROTECTION FROM h1 (attacker) to h5 (host)
 
 
 What'll you need to do to get Suricata running is in this folder:
@@ -10,26 +13,29 @@ Vscode is also installed if you want to open this folder in vscdoe just do the c
 
 Suricata is installed at ~/suricata-3.1/ and it can be worth opening the suricata.yaml to see what i've done.
 The rule files suricata will match on are found in the suricata.yaml and can be located in the  ~/suricata-3.1/rules/
-At the moment its set up to basically  just matching/alert on ICMP (ping ) messages
+
+
+THE RULSETS THAT ARE USED ARE FOUND IN THE RULES FOLDER RULES
+ - Currently its matching 10 pkts in 60 seconds from 10.0.0.1 before alerting
+
+
+Put rulset in  ~/suricata-3.1/rules/
+
 
 STEPS FOR SURICATA
 1. gnome-terminal . (opens a new terminal in this folder)
 
 2. sudo python mirror.py (if you get a cannot move interface error just restart)
-Opens a mininet topology h1<->s1<->h2, with h3 being the host that suricata will 
-sit on and all the trafic through the switch gets mirrored to it.
+Opens a mininet topology tree topology and sets up port mirroring on a particular interface from s1 to h3
 
 3. in mininet run xterm h3
 
-4. in the xterm run sudo ./cmds.sh  (this will set up the port mirroring and run suricata)
+4. in the xterm run sudo ./cmds.sh  (run suricata)
 
+5. in another gnome-terminal run sudo python output.py
 
-5. from another terminal in portmirroring run sudo python3.7 output.py
+6. In mininet open up h1 in xterm  
+    hping3 10.0.0.5 -1 --fast (Starts the dos attack)
+    It should have an rtt of 0 after it sends 3 packets.
+    or stop printing completely
 
-In suricata(xterm terminal) you should something like reconnected socket , i've got suricata set up atm to talk to output.py through 
-that eve.sock file/socket.
-
-7. In mininet run h1 ping -c 10 h2 you should see some messages printing in the output.py terminal
-
-At the moment it calculates the difference between two packets and if the duration is less than a second it installs a 
-rule onto s1 to drop all packets from 10.0.0.1 s1.
