@@ -12,7 +12,7 @@ os.system("rm eve.sock")
 server_address = "eve.sock"
 sock =  socket.socket(socket.AF_UNIX,  socket.SOCK_STREAM) 
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-sock.bind(server_address);
+sock.bind(server_address)
 sock.listen(1)
 
 conn,addr =  sock.accept()
@@ -26,7 +26,7 @@ dosProtection = False
 
 wlist = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5","10.0.0.6"}
 blist = {}
-hardTimeOut = 60;
+hardTimeOut = 60
 while True:
 	line = conn.recv(1000).decode("utf-8")
 	try:
