@@ -9,7 +9,7 @@ from mininet.node import RemoteController, Controller
 Script to build a custom tree topology in mininet given number of hosts.
 """
 
-def build_tree(num_hosts: int):
+def build_tree(num_hosts):
     """
     Build up the tree network topology with hosts, switches and links
     based on the given number of hosts. Tree is going to be a binary tree.
@@ -18,7 +18,7 @@ def build_tree(num_hosts: int):
     net = Mininet(link=TCLink)
     topo = [None]  # Element at i = 0 doesn't get used
 
-    level = math.ceil(math.log2(num_hosts))  # level of tree hosts are on
+    level = int(math.ceil(math.log(num_hosts, 2)))  # level of tree hosts are on
     num_switches = int(sum([math.pow(2, n) for n in range(0, level)]))
     
     # Add switches
