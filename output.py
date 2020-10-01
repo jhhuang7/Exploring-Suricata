@@ -24,9 +24,25 @@ dosProtection = False
 # os.system("sudo ovs-ofctl del-flows s1 nw_src="+sourceIp)
 # os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src="+sourceIp+",actions=drop")
 
-wlist = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5","10.0.0.6"}
+
+# TODO : change to onos, and query it for is
+
+
+
+os.system("sudo ovs-ofctl del-flows s1")
+
+# Get this from ONOS controller
+networkLinks = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6"}
+ingressPorts = [1, 3]
+
 blist = {}
 hardTimeOut = 60;
+
+def ingressPortRules():
+	for p in  ingressPorts:
+		for key in ingressPort:
+			os.system("sudo ovs-ofctl add-flow s1 hard_timeout=60,dl_type=0x0800,nw_src="+str(key)+",actions=drop,in_port="+str(p))
+
 while True:
 	line = conn.recv(1000).decode("utf-8")
 	try:
@@ -48,20 +64,20 @@ while True:
 							del blist[srcIP]
 						else:
 							continue
-
-					if srcIP not in wlist :
+					if srcIP not in networkLinks :
 						os.system("sudo ovs-ofctl del-flows s1")
-
 						blist[srcIP] = date
 						for key in blist:
 							os.system("sudo ovs-ofctl add-flow s1 hard_timeout=60,dl_type=0x0800,nw_src="+str(key)+",actions=drop")
-						
-						print('------------------------')
-						print('Current Flow Table for s1')
-						os.system("sudo ovs-ofctl dump-flows s1")
+					
+					ingressPortRules()
+					print('------------------------')
+					print('Current Flow Table for s1')
+					os.system("sudo ovs-ofctl dump-flows s1")
 					
 
 			except Exception as e:
+				print(e)
 				continue
 			# try:
 
@@ -105,6 +121,9 @@ while True:
 		continue
 
 sock.close()
+
+
+
 
 # # a = sock.recv(100)
 # # print(a)

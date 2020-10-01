@@ -46,7 +46,7 @@ if '__main__' == __name__:
 	net.addLink(s4, h6)
 
 
-	c0 = net.addController('c0', controller=Controller)
+	c0 = net.addController('c0', controller=lambda name : RemoteController(name, ip='127.0.0.1'))
 	
 	for s in switches:
 		s.start([c0])
@@ -56,7 +56,7 @@ if '__main__' == __name__:
 
 	#Intf('eth1', node=h3)  # May need to change 'eth' depending on the VM's internet connection
 	net.build()
-	c0.start()
+	#c0.start()
 	
 	x = CLI(net)
 	net.stop();
