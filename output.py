@@ -20,6 +20,7 @@ lastA = None
 dosProtection = False
 while True:
 	line = conn.recv(10000).decode("utf-8")
+	
 	try:
 		parsed = json.loads(line)
 
@@ -28,7 +29,6 @@ while True:
 			os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src=10.0.0.1,actions=drop")
 			os.system("sudo ovs-ofctl add-flow s1 priority=65535,hard_timeout=300,nw_src=10.0.0.5,actions=drop")
 			dosProtection = True
-
 			
 		# if (parsed['proto'] == u'ICMP' and parsed["src_ip"]=="10.0.0.1"):
 		# 	if line == "proto":
