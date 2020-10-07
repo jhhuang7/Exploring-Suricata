@@ -14,53 +14,42 @@ sock.bind(server_address)
 sock.listen(1)
 conn,addr = sock.accept()
 
-lastA = None
-dosProtection = False
-
-wlist = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5","10.0.0.6"}
+wlist = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6"}
 blist = {}
-hardTimeOut = 60
+hardTimeOut = 20
 
 while True:
-	line = conn.recv(1000).decode("utf-8")
-	
+	line = conn.recv(10000).decode("utf-8")
+
 	try:
-		lines =  line.split('\n')
-		for i in lines:
-			try:
-				if (i == ''):
+		parsed = json.loads(line)
+		
+		if parsed['tcp']['rst'] >= 200:  # If we've gotten more than 200 TCP RST packets
+			srcIP = parsed['src_ip']
+			print(parsed["timestamp"])
+			date = datetime.datetime.strptime(parsed["timestamp"], "%Y-%m-%dT%H:%M:%S.%f%z")
+					
+			if (srcIP in blist):
+				diff = date - blist[srcIP]
+
+				if diff.total_seconds() >= hardTimeOut:
+					del blist[srcIP]
+				else:
 					continue
-				parsed = json.loads(i)
 
-				if (parsed['proto'] == u'ICMP'):
-					srcIP = parsed['src_ip']
-					print(parsed["timestamp"])
-					date = datetime.datetime.strptime(parsed["timestamp"], "%Y-%m-%dT%H:%M:%S.%f%z")
+				if srcIP not in wlist:
+					os.system("sudo ovs-ofctl del-flows s1")
+
+					blist[srcIP] = date
+					for key in blist:
+						os.system("sudo ovs-ofctl add-flow s1 hard_timeout=10,dl_type=0x0800,nw_src="+str(key)+",actions=drop")
 					
-					if (srcIP in blist):
-						diff = date - blist[srcIP]
-
-						if diff.total_seconds() >= hardTimeOut:
-							del blist[srcIP]
-						else:
-							continue
-
-					if srcIP not in wlist:
-						os.system("sudo ovs-ofctl del-flows s1")
-
-						blist[srcIP] = date
-						for key in blist:
-							os.system("sudo ovs-ofctl add-flow s1 hard_timeout=60,dl_type=0x0800,nw_src="+str(key)+",actions=drop")
-						
-						print('------------------------')
-						print('Current Flow Table for s1')
-						os.system("sudo ovs-ofctl dump-flows s1")
+					print('------------------------')
+					print('Current Flow Table for s1')
+					os.system("sudo ovs-ofctl dump-flows s1")
 					
-			except Exception as e:
-				continue
-
 	except Exception as e:
-		print(e)
+		print("Error:", e)
 		continue
 
 sock.close()

@@ -65,6 +65,7 @@ rule-files:
 # - emerging-games.rules
 # - emerging-icmp_info.rules
  - emerging-icmp.rules
+ - port-scan.rules
 # - emerging-imap.rules
 # - emerging-inappropriate.rules
 # - emerging-malware.rules

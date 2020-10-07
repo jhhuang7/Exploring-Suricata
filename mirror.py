@@ -7,82 +7,52 @@ from mininet.node import RemoteController, Controller
 if '__main__' == __name__:
 	net = Mininet(link=TCLink)
 	
-	topos = ["simple", "mesh", "tree"]  # May add most hosts and switches for more complexity for each topo
-	mode = 2  # Change this ranging from 0 to 2
-	topo = topos[mode]
+	switches = []
 	
-	hosts = 0
-	switches = 0
-	
-	if topo == "simple":
-		h1 = net.addHost('h1')
-		h2 = net.addHost('h2')
-		h3 = net.addHost('h3')
-		s1 = net.addSwitch('s1')
+	h1 = net.addHost('h1')
+	h2 = net.addHost('h2')
+	h3 = net.addHost('h3')
+	h4  = net.addHost('h4')
+	h5  = net.addHost('h5')
+	h6  = net.addHost('h6')
+	h7  = net.addHost('h7')
 
-		net.addLink(h1, s1)
-		net.addLink(h2, s1)
-		net.addLink(h3, s1)
-		
-		hosts = 3
-		switches = 1
-		
-	elif topo == "mesh":
-		h1 = net.addHost('h1')
-		h2 = net.addHost('h2')
-		h3 = net.addHost('h3')
-		s1 = net.addSwitch('s1')
-		s2 = net.addSwitch('s2')
-		s3 = net.addSwitch('s3')
-		s4 = net.addSwitch('s4')
-		
-		net.addLink(s2, s1)
-		net.addLink(s3, s1)
-		net.addLink(s4, s1)
-		net.addLink(s3, s2)
-		net.addLink(s4, s2)
-		net.addLink(s3, s4)
-		net.addLink(h1, s1)
-		net.addLink(h1, s1)
-		net.addLink(h2, s3)
-		net.addLink(h3, s1)
-		
-		hosts = 3
-		switches = 4
-		
-	elif topo == "tree":
-		h1 = net.addHost('h1')
-		h2 = net.addHost('h2')
-		h3 = net.addHost('h3')
-		s1 = net.addSwitch('s1')
-		s2 = net.addSwitch('s2')
-		s3 = net.addSwitch('s3')
-		s4 = net.addSwitch('s4')
-		s5 = net.addSwitch('s5')
-
-		net.addLink(s2, s1)
-		net.addLink(s5, s1)
-		net.addLink(s3, s2)
-		net.addLink(s4, s2)
-		net.addLink(h1, s3)
-		net.addLink(h2, s5)
-		net.addLink(h3, s1)
-		
-		hosts = 3
-		switches = 5
+	s1 = net.addSwitch('s1')
+	s2 = net.addSwitch('s2')
+	s3 = net.addSwitch('s3')
+	s4 = net.addSwitch('s4')
 	
+	switches.append(s1)
+	switches.append(s2)
+	switches.append(s3)
+	switches.append(s4)
+
+	net.addLink(h1, s1)
+	net.addLink(h3, s1)
+	net.addLink(h7, s1)
+
+	net.addLink(s1, s2)
+	net.addLink(s2, s3)	
+	net.addLink(s2, s4)	
+
+	net.addLink(s3, h2)
+	net.addLink(s3, h5)
+
+	net.addLink(s4, h4)
+	net.addLink(s4, h6)
+
+
 	c0 = net.addController('c0', controller=Controller)
-	Intf('eth1', node=h3)  # May need to change 'eth' depending on the VM's internet connection
+	
+	for s in switches:
+		s.start([c0])
+
+	s1.cmd('ovs-vsctl del-port s1-eth2')
+	s1.cmd('ovs-vsctl add-port s1 s1-eth2 -- --id=@p get port s1-eth2 -- --id=@m create mirror name=m0 select-all=true output-port=@p -- set bridge s1 mirrors=@m')
+
+	
 	net.build()
 	c0.start()
 	
-	s1.start([c0])
-	if switches >= 4:
-		s2.start([c0])
-		s3.start([c0])
-		s4.start([c0])
-	if switches >= 5:
-		s5.start([c0])
-	
-	CLI(net)
+	x = CLI(net)
 	net.stop()
