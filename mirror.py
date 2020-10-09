@@ -54,7 +54,7 @@ if '__main__' == __name__:
 	s1.cmd('ovs-vsctl del-port s1-eth2')
 	s1.cmd('ovs-vsctl add-port s1 s1-eth2 -- --id=@p get port s1-eth2 -- --id=@m create mirror name=m0 select-all=true output-port=@p -- set bridge s1 mirrors=@m')
 
-	#Intf('eth1', node=h3)  # May need to change 'eth' depending on the VM's internet connection
+	Intf('eth1', node=h3)  # May need to change 'eth' depending on the VM's internet connection
 	net.build()
 	#c0.start()
 	

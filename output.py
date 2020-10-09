@@ -3,6 +3,9 @@ import sys
 import datetime
 import os
 import json
+import requests
+import urllib
+
 
 os.system("sudo ovs-ofctl del-flows s1")
 
@@ -26,22 +29,87 @@ dosProtection = False
 
 
 # TODO : change to onos, and query it for is
-
-
-
 os.system("sudo ovs-ofctl del-flows s1")
 
 # Get this from ONOS controller
 networkLinks = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6"}
 ingressPorts = [1, 3]
-
+deviceID = "of:0000000000000001" # device id of s1 
 blist = {}
 hardTimeOut = 60;
 
+postTo = "http://127.0.0.1:8181/onos/v1/flows/"
+auth = ('onos','rocks')
+
 def ingressPortRules():
-	for p in  ingressPorts:
-		for key in ingressPort:
-			os.system("sudo ovs-ofctl add-flow s1 hard_timeout=60,dl_type=0x0800,nw_src="+str(key)+",actions=drop,in_port="+str(p))
+	print("HERE")
+	pay_load_to_post = {
+	"flows": [
+			
+	]
+	}
+	print("Installing Reflection DOS Protection")
+
+	for p in ingressPorts:
+		for key in networkLinks:
+
+			#os.system("sudo ovs-ofctl add-flow s1 hard_timeout=60,dl_type=0x0800,nw_src="+str(key)+",actions=drop,in_port="+str(p))
+			pay_load_to_post["flows"].append({
+				"priority": 41000,
+				"timeout": 0,
+				"isPermanent": True,
+				"deviceId": "of:0000000000000001",
+				"treatment": {
+
+				}, "selector": {
+					"criteria": [
+					{
+						"type": "IPV4_SRC",
+						"ip": key+"/32"
+					},
+					{
+						"type": "ETH_TYPE",
+						"ethType": "0x0800"
+					},
+					{
+						"type": "IN_PORT",
+						"port": str(p)
+					},
+					]
+					}
+				})
+
+	x = requests.post("http://127.0.0.1:8181/onos/v1/flows/", data = json.dumps(pay_load_to_post) , auth=('onos','rocks'))
+	print(x)
+
+ingressPortRules()
+
+def generateBlockingRule(ip, timeout=60,id="of:0000000000000001"):
+	return json.dumps({
+		"flows": [{
+				"priority": 42000,
+				"timeout": timeout,
+				"isPermanent": False,
+				"deviceId": id,
+				"treatment": {
+
+				}, "selector": {
+					"criteria": [
+						{
+							"type": "IPV4_SRC",
+							"ip": ip+"/32"
+						},
+						{
+							"type": "ETH_TYPE",
+							"ethType": "0x0800"
+						},
+
+					]
+				}
+			}
+		]
+	})
+
 
 while True:
 	line = conn.recv(1000).decode("utf-8")
@@ -54,26 +122,33 @@ while True:
 				parsed = json.loads(i)
 
 
-				if (parsed['proto'] == u'ICMP') :
+				if (parsed['proto'] == u'ICMP') :		
 					srcIP = parsed['src_ip']
-					print(parsed["timestamp"])
+					# print(parsed["timestamp"])
 					date = datetime.datetime.strptime(parsed["timestamp"], "%Y-%m-%dT%H:%M:%S.%f%z")
 					if (srcIP in blist) :
 						diff = date - blist[srcIP]
 						if diff.total_seconds() >= hardTimeOut:
+							print('Here')
 							del blist[srcIP]
 						else:
 							continue
-					if srcIP not in networkLinks :
-						os.system("sudo ovs-ofctl del-flows s1")
-						blist[srcIP] = date
-						for key in blist:
-							os.system("sudo ovs-ofctl add-flow s1 hard_timeout=60,dl_type=0x0800,nw_src="+str(key)+",actions=drop")
+
 					
-					ingressPortRules()
-					print('------------------------')
-					print('Current Flow Table for s1')
-					os.system("sudo ovs-ofctl dump-flows s1")
+					if srcIP not in networkLinks :
+						# os.system("sudo ovs-ofctl del-flows s1")
+						# requests.delete("http://127.0.0.1:8181/onos/v1/flows/of:0000000000000001/")
+						blist[srcIP] = date
+						
+						for key in blist:
+							print("Generate new flow rule addition")
+							x = requests.post("http://127.0.0.1:8181/onos/v1/flows/", data=generateBlockingRule(key, timeout=10), auth=auth)
+							#os.system("sudo ovs-ofctl add-flow s1 hard_timeout="+str(hardTimeOut)+",dl_type=0x0800,nw_src="+str(key)+",actions=drop")
+					
+					# ingressPortRules()
+					# print('------------------------')
+					# print('Current Flow Table for s1')
+					# os.system("sudo ovs-ofctl dump-flows s1")
 					
 
 			except Exception as e:
