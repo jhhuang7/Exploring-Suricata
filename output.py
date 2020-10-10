@@ -37,8 +37,7 @@ while True:
 					continue
 				parsed = json.loads(i)
 
-
-				if (parsed['proto'] == u'ICMP') :
+				if (parsed['proto'] == u'ICMP') or parsed['proto'] == u'TCP':
 					srcIP = parsed['src_ip']
 					print(parsed["timestamp"])
 					date = datetime.datetime.strptime(parsed["timestamp"], "%Y-%m-%dT%H:%M:%S.%f%z")
