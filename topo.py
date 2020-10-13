@@ -20,6 +20,7 @@ def build_tree(num_hosts):
 
     level = int(math.ceil(math.log(num_hosts, 2)))  # level of tree hosts are on
     num_switches = int(sum([math.pow(2, n) for n in range(0, level)]))
+
     
     # Add switches
     for i in range(0, num_switches):
@@ -42,6 +43,12 @@ def build_tree(num_hosts):
         # Right child
         if 2 * k + 1 <= len(topo) - 1:
             net.addLink(topo[k], topo[2 * k + 1])
+    
+    # Suricata and attacker host to hang off s1
+    suricata = net.addHost("hs")
+    attacker = net.addHost("ha")
+    net.addLink(topo[1], suricata)
+    net.addLink(topo[1], attacker)
 
     c0 = net.addController("c0", controller=Controller)
     for s in range(1, num_switches + 1):
