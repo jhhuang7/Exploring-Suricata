@@ -32,15 +32,16 @@ dosProtection = False
 os.system("sudo ovs-ofctl del-flows s1")
 
 # Get this from ONOS controller
-networkLinks = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6"}
-ingressPorts = [1, 3]
-deviceID = "of:0000000000000001" # device id of s1 
+# device id of s1 
 blist = {}
 hardTimeOut = 60;
 
 postTo = "http://127.0.0.1:8181/onos/v1/flows/"
 auth = ('onos','rocks')
 
+internalIPs = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6"}
+ingressPort = {"of:0000000000000001"] : [1, 3]}
+outFacingSwitches = ["of:0000000000000001"] 
 def ingressPortRules():
 	print("HERE")
 	pay_load_to_post = {
@@ -50,46 +51,21 @@ def ingressPortRules():
 	}
 	print("Installing Reflection DOS Protection")
 
-	for p in ingressPorts:
-		for key in networkLinks:
+	for switch in outFacingSwitches:
+		for port in ingressPort[switch]:
+			for ip in internalIPs:
+				pay_load_to_post["flows"].append(generateBlockingRule(ip, permanent=True, id=switch, port= port))
 
-			#os.system("sudo ovs-ofctl add-flow s1 hard_timeout=60,dl_type=0x0800,nw_src="+str(key)+",actions=drop,in_port="+str(p))
-			pay_load_to_post["flows"].append({
-				"priority": 41000,
-				"timeout": 0,
-				"isPermanent": True,
-				"deviceId": "of:0000000000000001",
-				"treatment": {
-
-				}, "selector": {
-					"criteria": [
-					{
-						"type": "IPV4_SRC",
-						"ip": key+"/32"
-					},
-					{
-						"type": "ETH_TYPE",
-						"ethType": "0x0800"
-					},
-					{
-						"type": "IN_PORT",
-						"port": str(p)
-					},
-					]
-					}
-				})
-
-	x = requests.post("http://127.0.0.1:8181/onos/v1/flows/", data = json.dumps(pay_load_to_post) , auth=('onos','rocks'))
-	print(x)
+	result = requests.post("http://127.0.0.1:8181/onos/v1/flows/", data = json.dumps(pay_load_to_post) , auth=('onos','rocks'))
 
 ingressPortRules()
 
-def generateBlockingRule(ip, timeout=60,id="of:0000000000000001"):
+def generateBlockingRule(ip, timeout=60,id="of:0000000000000001", permanent=False):
 	return json.dumps({
 		"flows": [{
 				"priority": 42000,
 				"timeout": timeout,
-				"isPermanent": False,
+				"isPermanent": permanent,
 				"deviceId": id,
 				"treatment": {
 
@@ -135,7 +111,7 @@ while True:
 							continue
 
 					
-					if srcIP not in networkLinks :
+					if srcIP not in internalIPs :
 						# os.system("sudo ovs-ofctl del-flows s1")
 						# requests.delete("http://127.0.0.1:8181/onos/v1/flows/of:0000000000000001/")
 						blist[srcIP] = date
