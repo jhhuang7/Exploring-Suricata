@@ -63,7 +63,7 @@ while True:
 						else:
 							continue
 
-					if srcIP not in wlist :
+					if srcIP not in internalIPs :
 						os.system("sudo ovs-ofctl del-flows s1")
 						# reflectedSpoofProtection()
 						blist[srcIP] = date
