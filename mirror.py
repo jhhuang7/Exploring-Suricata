@@ -54,12 +54,6 @@ if '__main__' == __name__:
 	for s in switches:
 		s.start([c0])
 
-	# s1.cmd('ovs-vsctl del-port s1-eth2')
-	# s1.cmd('ovs-vsctl add-port s1 s1-eth2 -- --id=@p get port s1-eth2 -- --id=@m create mirror name=m0 select-all=true output-port=@p -- set bridge s1 mirrors=@m')
-	# s5.cmd('ovs-vsctl del-port s5-eth3')
-	# s5.cmd('ovs-vsctl add-port s5 s5-eth3 -- --id=@p get port s5-eth3 -- --id=@m create mirror name=m0 select-all=true output-port=@p -- set bridge s5 mirrors=@m')
-
-	
 	net.build()
 	c0.start()
 	

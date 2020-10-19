@@ -10,6 +10,7 @@ os.system("sudo ovs-ofctl del-flows s1")
 os.system("rm eve.sock")
 os.system("pkill -f suricata") # Remove all instances of suricata
 
+
 onosMode = False
 anomalyMode = False
 median = 3
@@ -186,6 +187,8 @@ threads = []
 
 for i in range(2):
     conn, addr = sock.accept()
+    print("connection accepted... if you are before starting suricata \n it means you have some \n suricata processes still \n left to kill do this with \n pkill -f suricata")
+
     thread = SuricataConnection(i, "Thread-"+str(i), conn)
     # Start new Threads
     thread.start()
