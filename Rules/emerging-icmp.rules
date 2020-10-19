@@ -1,5 +1,2 @@
-This is not the actual rules files, the actual rules file is in suricata-3.1/rules/
-alert icmp any any -> any any (msg:"Threshold Reached";sid:0; threshold:type threshold, track by_src, count 10, seconds 60;)
-alert tcp any any -> any any (msg:"SYN Flood"; flags:S,2; seq:0; sid:1; rev:1; threshold:type threshold, track by_src, count 20, seconds 1;)
-alert udp any any -> any any (msg:"UDP Flood"; flags:S; sid:2; rev:1; threshold:type threshold, track by_src, count 40, seconds 2;)
-threshold:type threshold, track by_src, count 20, seconds 1;
+alert icmp any any -> any any (msg:"Threshold Reached";sid:0; threshold:type threshold, track by_src, count 10, seconds 2;)
+alert tcp any any -> any any (msg:"SYN Flood"; sid:1; threshold:type threshold, track by_src, count 10, seconds 2;)
