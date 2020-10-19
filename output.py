@@ -7,6 +7,7 @@ import json
 
 os.system("sudo ovs-ofctl del-flows s1")
 os.system("rm eve.sock")
+os.system("pkill -f suricata") # Remove all instances of suricata
 
 server_address = "eve.sock"
 sock =  socket.socket(socket.AF_UNIX,  socket.SOCK_STREAM) 
