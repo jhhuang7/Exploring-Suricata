@@ -19,9 +19,9 @@ conn,addr =  sock.accept()
 print("connection accepted... if you are before starting suricata it means you have some suricata processes still left to kill do this with \n pkill -f suricata")
 # I still need to test ONOS mode
 onosMode = False
+# Still need to do anomaly detection
+
 anomalyMode = False
-
-
 median = 3
 stdDev = 1
 
