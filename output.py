@@ -19,16 +19,14 @@ stdDev = 1
 hardTimeOut = 10
 internalIPs = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6"}
 
-
-
 if onosMode:
-    ingressPort = {"of:0000000000000001": [1, 3]};
+    ingressPort = {"of:0000000000000001": [1, 3], "of:0000000000000005": [2]};
     # For ONOS model
     postTo = "http://127.0.0.1:8181/onos/v1/flows/"
     auth = ('onos', 'rocks')
 else:
     suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5'} 
-    ingressPort = {'s1': [1, 3]};
+    ingressPort = {'s1': [1, 3], 's5' : [2]};
 
 
 def reflectedSpoofProtection():
@@ -109,14 +107,13 @@ def generateBlockingRuleONOS(ip, timeout=60, id="of:0000000000000001", isPermane
 
 # TODO : Fix this 
 if (onosMode):
-    pass
-    # reflectedSpoofProtectionONOS()
+    reflectedSpoofProtectionONOS()
 else:
+
     # reflectedSpoofProtection()
     pass
 
 class SuricataConnection (threading.Thread):
-
     def __init__(self, threadID, name, sock):
         threading.Thread.__init__(self)
         self.threadID = threadID
@@ -160,6 +157,7 @@ class SuricataConnection (threading.Thread):
                                         for key in blist:
                                             os.system("sudo ovs-ofctl add-flow "+switch+" hard_timeout=" + str(
                                                 hardTimeOut) + ",dl_type=0x0800,nw_src=" + str(key) + ",actions=drop")
+                                                
                                     else:
                                         blist[srcIP] = date
                                         for key in blist:
@@ -185,9 +183,9 @@ sock.listen(5)
 
 threads = []
 
-for i in range(2):
+while True:
     conn, addr = sock.accept()
-    print("connection accepted... if you are before starting suricata \n it means you have some \n suricata processes still \n left to kill do this with \n pkill -f suricata")
+    print("connection accepted...if you havent started suricata\nit means you have some \nsuricata processes still \nleft to kill do this with \n pkill -f suricata")
 
     thread = SuricataConnection(i, "Thread-"+str(i), conn)
     # Start new Threads
