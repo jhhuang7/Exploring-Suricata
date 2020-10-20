@@ -5,7 +5,7 @@ import sys
 # Launches Suricata
 # Example in cmds.sh
 # for the s1 suricata (cmds.sh): sudo python launchSuricata s1-eth2 h3-eth0
-# for the s4 suricata (cmds.sh): sudo python launchSuricata s5-eth3 h8-eth0
+# for the s5 suricata (cmds.sh): sudo python launchSuricata s5-eth3 h8-eth0
 
 if len(sys.argv) != 3:
     print("sudo python launchSuricata interfaceOnSwitch interfaceOnHost")
