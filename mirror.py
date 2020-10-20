@@ -2,7 +2,7 @@ from mininet.cli import CLI
 from mininet.net import Mininet
 from mininet.link import Link, TCLink, Intf
 from mininet.node import RemoteController, Controller
-
+import sys
 
 if '__main__' == __name__:
 	net = Mininet(link=TCLink)
@@ -11,7 +11,7 @@ if '__main__' == __name__:
 	switches = []
 	
 	# h1, h7 and h9 are "external to the system"
-	# h3 and h8 are meant for suricata, for s1 and s5 respectively
+	# h3 and h8 are meant for suricata, for s1 and s5 
 	# if suricata is not running  installed that are treated as "external"
 	# h2, h4, h5, h6 are treated as internal.to the network.
 
@@ -23,7 +23,6 @@ if '__main__' == __name__:
 	h6  = net.addHost('h6')
 	h7  = net.addHost('h7')
 	h8  = net.addHost('h8')
-	h9  = net.addHost('h9')
 
 	s1 = net.addSwitch('s1')
 	s2 = net.addSwitch('s2')
@@ -39,7 +38,6 @@ if '__main__' == __name__:
 
 	net.addLink(h1, s1)
 	net.addLink(h3, s1)
-	net.addLink(h9, s1)
 
 	net.addLink(s1, s2)
 	net.addLink(s2, s3)	
@@ -56,8 +54,11 @@ if '__main__' == __name__:
 	net.addLink(h7, s5)
 	net.addLink(h8, s5)
 
-	c0 = net.addController('c0', controller=Controller)
-	
+	if (len(sys.argv) == 0):
+		c0 = net.addController('c0', controller=Controller)
+	else:
+		c0 = net.addController('c0', controller=RemoteController)
+
 	for s in switches:
 		s.start([c0])
 

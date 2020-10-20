@@ -4,7 +4,7 @@ import datetime
 import os
 import json
 import threading
-
+import requests
 
 # TODO : test onos mode again
 
@@ -14,7 +14,7 @@ import threading
 ONOS Mode works off an ONOS controller
 CLI Mode (where ONOS = False) is more crude and just uses os library and ovs - ofctl to manages installation
 '''
-onosMode = False
+onosMode = True
 
 '''
 False : runs in blacklist which works solely of the suricata
@@ -27,6 +27,11 @@ anomalyMode = False
 How long block rules are on the switch for
 '''
 hardTimeOut = 10
+
+'''
+Print Parsed
+'''
+printParsed = True
 
 # HARDCODED VALUES
 '''
@@ -44,11 +49,16 @@ if onosMode:
     # For ONOS model
     postTo = "http://127.0.0.1:8181/onos/v1/flows/"
     auth = ('onos', 'rocks')
+    suricataInterfaces = {'h3-eth0':  "of:0000000000000001", 'h8-eth0': "of:0000000000000005"} 
+
 else:
     '''
-    Hardcoded : switches that lead outside of our system
+    Hardcoded : switches and the ports that lead outside of our system
     '''
     ingressPort = {'s1': [1], 's5' : [2]};
+    suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5'} 
+
+
 
 
 def reflectedSpoofProtection():
@@ -74,7 +84,7 @@ def reflectedSpoofProtectionONOS():
                     "priority": 41000,
                     "timeout": 0,
                     "isPermanent": True,
-                    "deviceId": "of:0000000000000001",
+                    "deviceId": switch,
                     "treatment": {
 
                     }, "selector": {
@@ -89,14 +99,16 @@ def reflectedSpoofProtectionONOS():
                         },
                         {
                             "type": "IN_PORT",
-                            "port": str(p)
+                            "port": str(port)
                         },
                         ]
                         }
                     })
 
+    print(pay_load_to_post)
     requests.post("http://127.0.0.1:8181/onos/v1/flows/",
                   data=json.dumps(pay_load_to_post), auth=('onos', 'rocks'))
+
 
 def generateBlockingRuleONOS(ip, timeout=60, id="of:0000000000000001", isPermanent=False):
     return json.dumps({
@@ -144,7 +156,7 @@ def installRule(switch, timeout, srcIP, date, blist) :
             for key in blist:
                 print("Generate new flow rule addition")
                 x = requests.post("http://127.0.0.1:8181/onos/v1/flows/",
-                                    data=generateBlockingRuleONOS(key, timeout=10), auth=auth)
+                                    data=generateBlockingRuleONOS(key, timeout=10, id=switch), auth=auth)
             
 
 
@@ -176,10 +188,13 @@ class SuricataConnection (threading.Thread):
                         if (i == ''):
                             continue
                         parsed = json.loads(i)
-
+                        
                         # If protocol in the packet is ICMP or Matches one our signatures
                         if (str(parsed['proto']) == 'ICMP') \
                                 or (parsed['proto'] == u'TCP' and int(str(parsed['alert']['signature_id'])) == 1):
+                            
+                            if (printParsed) :
+                                print(parsed)
 
                             if (not anomalyMode):
                                 ''' 
@@ -265,6 +280,8 @@ class SuricataConnection (threading.Thread):
 
                                         # Move mean
                                         timePeriodsOfZero =  ((date - cDate).total_seconds()- threshold) // 2
+                                        
+                                        
                                         print(f"Time periods of zero {timePeriodsOfZero}")
                                         
                                         dests[srcIP][1] = 1
@@ -309,10 +326,10 @@ if __name__ == '__main__':
     sock.listen(5)
 
     threads = []
-
-    suricatasNo = 1
-
-    for i in range(suricatasNo):
+    #Amount of suricatas before the main thread stops accepting new connectionSS
+    suricatasNo = 4
+        
+    for i in range(suricatasNo):    
         conn, addr = sock.accept()
         print("Connection Accepted. \nNOTE:If you havent started suricata\nit means you have some \nsuricata processes still \nleft to kill do this with \n pkill -f suricata")
         
