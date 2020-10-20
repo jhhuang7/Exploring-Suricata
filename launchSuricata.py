@@ -3,6 +3,8 @@ import sys
 
 # Sets up port mirroring 
 # Launches Suricata
+# Example in cmds.sh
+# To emulate that run sudo python python launchSuricata s1-eth2 h3-eth0
 if len(sys.argv) != 3:
     print("sudo python launchSuricata interfaceOnSwitch interfaceOnHost")
 else:

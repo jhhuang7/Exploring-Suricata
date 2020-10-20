@@ -1,3 +1,5 @@
+##### NOT THE ACTUAL SURICATA YAML USED, JUST A COPY OF IT FOR VERIFICATION PURPOSES
+##### CTRL F - !!!! to find all the fields you'll need to edit in the actual suricata
 %YAML 1.1
 ---
 
@@ -16,10 +18,10 @@ vars:
     #HOME_NET: "[192.168.0.0/16]"
     #HOME_NET: "[10.0.0.0/8]"
     #HOME_NET: "[172.16.0.0/12]"
-    HOME_NET: "any"
+    HOME_NET: "any" # !!!!
 
     #EXTERNAL_NET: "!$HOME_NET"
-    EXTERNAL_NET: "any"
+    EXTERNAL_NET: "any" # !!!!
 
     HTTP_SERVERS: "$HOME_NET"
     SMTP_SERVERS: "$HOME_NET"
@@ -108,10 +110,10 @@ threshold-file: /home/sdn/suricata-3.1/threshold.config
 ##
 ## Step 3: select outputs to enable
 ##
-
 # The default logging directory.  Any log or output file will be
 # placed here if its not specified with a full path name. This can be
 # overridden with the -l command line parameter.
+# !!!!
 default-log-dir: /home/sdn/Exploring-Suricata/
 
 # global stats configuration
@@ -132,8 +134,13 @@ outputs:
 
   # Extensible Event Format (nicknamed EVE) event log in JSON format
   - eve-log:
-      enabled: yes
+      # !!!!
+      enabled: yes 
+      # !!!!
+
       filetype: unix_stream #regular|syslog|unix_dgram|unix_stream|redis
+      # !!!!
+
       filename: eve.sock
       #prefix: "@cee: " # prefix to prepend to each log entry
       # the following are valid when type: syslog above
