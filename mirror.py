@@ -11,7 +11,8 @@ if '__main__' == __name__:
 	switches = []
 	
 	# h1, h7 and h9 are "external to the system"
-	# h3 and h8 are meant for suricata, if suricata is not running  installed that are treated as "external"
+	# h3 and h8 are meant for suricata, for s1 and s5 respectively
+	# if suricata is not running  installed that are treated as "external"
 	# h2, h4, h5, h6 are treated as internal.to the network.
 
 	h1 = net.addHost('h1')

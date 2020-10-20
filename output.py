@@ -286,6 +286,7 @@ if __name__ == '__main__':
     Cleaning up processes before starting a new instance
     '''
     os.system("sudo ovs-ofctl del-flows s1")
+    os.system("sudo ovs-ofctl del-flows s5")
     os.system("rm eve.sock")
     os.system("pkill -f suricata") # Remove all instances of suricata
 
