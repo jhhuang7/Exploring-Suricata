@@ -1,3 +1,0 @@
-#------- NOT THE ACTUAL RULES FILES, USE THIS TO COPY TO suricata.3-1/rules/
-alert icmp any any -> any any (msg:"Threshold Reached";sid:0; threshold:type threshold, track by_src, count 10, seconds 10;)
-alert tcp any any -> any any (msg:"SYN Flood"; sid:1; threshold:type threshold, track by_src, count 10, seconds 10;)

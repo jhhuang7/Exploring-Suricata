@@ -44,12 +44,17 @@ internalIPs = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6"}
 '''
 Hardcoded : the switches that suricata will be connected to
 '''
-# suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5', 'h10-eth0': 's6', 'h12-eth0' : 's7'} 
 if onosMode:
+    '''
+    Hardcoded : switches and the ports that lead outside of our system
+    '''
     ingressPort = {"of:0000000000000001": [1], "of:0000000000000005": [2]};
     # For ONOS model
     postTo = "http://127.0.0.1:8181/onos/v1/flows/"
     auth = ('onos', 'rocks')
+    '''
+    Hardcoded : the switches that suricata will be connected to
+    '''
     suricataInterfaces = {'h3-eth0':  "of:0000000000000001", 'h8-eth0': "of:0000000000000005"} 
 
 else:
@@ -57,11 +62,17 @@ else:
     Hardcoded : switches and the ports that lead outside of our system
     '''
     ingressPort = {'s1': [1], 's5' : [2]};
+
+    '''
+    Hardcoded : the switches that suricata will be connected to
+    '''
     suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5'} 
 
 
 
-
+'''
+Used in not onos mode, where it iterates through all internal ips currently not used for perfomance reasons.
+'''
 def reflectedSpoofProtection():
     for switch in ingressPort:
         for port in ingressPort[switch]:
@@ -70,6 +81,10 @@ def reflectedSpoofProtection():
                 cmd = "sudo ovs-ofctl add-flow " + switch + " hard_timeout=0,priority=65535,in_port="+str(port)+",dl_type=0x0800,nw_src="+str(key)+",actions=drop"
                 os.system(cmd)
 
+
+'''
+Used in not onos mode, where it iterates through all internal ips and 
+'''
 def reflectedSpoofProtectionONOS():
     pay_load_to_post = {
     "flows": [
@@ -110,7 +125,9 @@ def reflectedSpoofProtectionONOS():
     requests.post("http://127.0.0.1:8181/onos/v1/flows/",
                   data=json.dumps(pay_load_to_post), auth=('onos', 'rocks'))
 
-
+'''
+Populates the required fields for an ONOS blocking rule
+'''
 def generateBlockingRuleONOS(ip, timeout=60, id="of:0000000000000001", isPermanent=False):
     return json.dumps({
         "flows": [{
@@ -177,11 +194,11 @@ class SuricataConnection (threading.Thread):
         blist = {}
 
 
-        # For anomaly mode
+        # For BASIC anomaly mode
         dests = {} #{ip : (, )} # {ip : (timestamp, msgsFromSuricata) packet count
 
         while True:
-            line = self.sock.recv(475).decode("utf-8")
+            line = self.sock.recv(475).decode("utf-8") # Reads from socket
             try:
                 lines = line.split('\n')
                 for i in lines:
@@ -333,7 +350,7 @@ if __name__ == '__main__':
         conn, addr = sock.accept()
         print("Connection Accepted. \nNOTE:If you havent started suricata\nit means you have some \nsuricata processes still \nleft to kill do this with \n pkill -f suricata")
         
-        # Manges the suricata connected to the conn socket in this thread
+        # Mangaes the suricata connected to the conn socket in this thread
         thread = SuricataConnection(i, "Thread-"+str(i), conn)
         # Start new Threads 
         thread.start()

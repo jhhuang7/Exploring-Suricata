@@ -1,2 +1,0 @@
-Part of this project involved launching simultaneous attacks, this can be done with the use of the first.sh and rest.sh files.
-The way it works is that 
