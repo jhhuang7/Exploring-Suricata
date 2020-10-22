@@ -13,8 +13,11 @@ import requests
 ONOS Mode works off an ONOS controller
 CLI Mode (where ONOS = False) is more crude and just uses os library and ovs - ofctl to manages installation
 '''
-onosMode = False
 
+if (len(sys.argv) == 2 and sys.argv[1] == "onos"):
+    onosMode = True
+else:
+    onosMode = False
 '''
 False : runs in blacklist which works solely of the suricata
 True : runs in basic anomaly mode with hardcoded means medians
@@ -54,7 +57,7 @@ else:
     Hardcoded : switches and the ports that lead outside of our system
     '''
     ingressPort = {'s1': [1], 's5' : [2]};
-suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5', 'h10-eth0': 's6', 'h12-eth0' : 's7'} 
+    suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5'} 
 
 
 

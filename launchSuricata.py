@@ -1,10 +1,11 @@
 import os
 import sys
 
-# Sets up port mirroring 
+# Sets up port mirroring for any set of ports
 # Launches Suricata
-# Example in cmds.sh
+# Example in h3suricmds.sh : 
 # for the s1 suricata (cmds.sh): sudo python3.7 launchSuricata s1-eth2 h3-eth0
+# Example in h8suricmds.sh : 
 # for the s5 suricata (cmds.sh): sudo python3.7 launchSuricata s5-eth3 h8-eth0
 
 if len(sys.argv) != 3:
