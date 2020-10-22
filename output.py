@@ -7,6 +7,7 @@ import threading
 import requests
 
 
+#####--- START OF CONFIGURATION OPTIONS-----####
 
 # CONFIGURATION OPTIONS / GLOBAL VARIABLES
 '''
@@ -27,7 +28,7 @@ anomalyMode = False
 '''
 How long block rules are on the switch for
 '''
-hardTimeOut = 60
+hardTimeOut = 10
 
 '''
 Print Parsed
@@ -68,7 +69,7 @@ else:
     '''
     suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5'} 
 
-
+#####--- END OF CONFIGURATION OPTIONS-----####
 
 '''
 Used in not onos mode, where it iterates through all internal ips currently not used for perfomance reasons.
@@ -171,10 +172,7 @@ def installRule(switch, timeout, srcIP, date, blist) :
             # reflectedSpoofProtection()
         else:
             blist[srcIP] = date
-            for key in blist:
-                print("Generate new flow rule addition")
-                x = requests.post("http://127.0.0.1:8181/onos/v1/flows/",
-                                    data=generateBlockingRuleONOS(key, timeout=10, id=switch), auth=auth)
+            x = requests.post("http://127.0.0.1:8181/onos/v1/flows/", data=generateBlockingRuleONOS(srcIP, timeout=hardTimeOut, id=switch), auth=auth)
             
 
 
