@@ -1,5 +1,5 @@
 ##### NOT THE ACTUAL SURICATA YAML USED, JUST A COPY OF IT FOR VERIFICATION PURPOSES
-##### CTRL F - !!!! to find all the fields you'll need to edit in the actual suricata
+##### CTRL F - '!!!!' to find all the fields you'll need to edit in the actual suricata
 %YAML 1.1
 ---
 

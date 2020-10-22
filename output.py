@@ -6,7 +6,6 @@ import json
 import threading
 import requests
 
-# TODO : test onos mode again
 
 
 # CONFIGURATION OPTIONS / GLOBAL VARIABLES
@@ -14,24 +13,23 @@ import requests
 ONOS Mode works off an ONOS controller
 CLI Mode (where ONOS = False) is more crude and just uses os library and ovs - ofctl to manages installation
 '''
-onosMode = True
+onosMode = False
 
 '''
 False : runs in blacklist which works solely of the suricata
 True : runs in basic anomaly mode with hardcoded means medians
-TODO: finish anomaly mode
 '''
 anomalyMode = False
 
 '''
 How long block rules are on the switch for
 '''
-hardTimeOut = 10
+hardTimeOut = 60
 
 '''
 Print Parsed
 '''
-printParsed = True
+printParsed = False
 
 # HARDCODED VALUES
 '''
@@ -43,7 +41,7 @@ internalIPs = {"10.0.0.2", "10.0.0.3", "10.0.0.4", "10.0.0.5", "10.0.0.6"}
 '''
 Hardcoded : the switches that suricata will be connected to
 '''
-suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5'} 
+# suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5', 'h10-eth0': 's6', 'h12-eth0' : 's7'} 
 if onosMode:
     ingressPort = {"of:0000000000000001": [1], "of:0000000000000005": [2]};
     # For ONOS model
@@ -56,7 +54,7 @@ else:
     Hardcoded : switches and the ports that lead outside of our system
     '''
     ingressPort = {'s1': [1], 's5' : [2]};
-    suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5'} 
+suricataInterfaces = {'h3-eth0':  's1', 'h8-eth0': 's5', 'h10-eth0': 's6', 'h12-eth0' : 's7'} 
 
 
 
@@ -239,7 +237,7 @@ class SuricataConnection (threading.Thread):
                                 srcIP = parsed['src_ip']
                                 date = datetime.datetime.strptime(
                                     parsed["timestamp"], "%Y-%m-%dT%H:%M:%S.%f%z")
-
+                                    
                                 if (srcIP in blist):
                                     diff = date - blist[srcIP]
                                     if diff.total_seconds() >= hardTimeOut:
@@ -259,27 +257,25 @@ class SuricataConnection (threading.Thread):
                                     diff = date - cDate;
                                     if (diff.total_seconds() <= threshold) :
                                         dests[srcIP][1] += 1    
-                                        # TODO: finishing this
-                                        # # Check the amount in the last threshold seconds recorded
-                                        # if (dests[srcIP][1] >= median + 3 * stdDev) :
-                                        #     print(f"Over 3 devs in the last {threshold}")
-                                        #     if (srcIP in blist):
-                                        #         diff = date - blist[srcIP]
-                                        #         if diff.total_seconds() >= hardTimeOut:
-                                        #             del blist[srcIP]
-                                        #         else:
-                                        #             continue
 
-                                        #     switch = suricataInterfaces[parsed['in_iface']]
+                                        if (dests[srcIP][1] >= median + 3 * stdDev) :
+                                            print(f"Over 3 devs in the last {threshold}")
+                                            if (srcIP in blist):
+                                                diff = date - blist[srcIP]
+                                                if diff.total_seconds() >= hardTimeOut:
+                                                    del blist[srcIP]
+                                                else:
+                                                    continue
 
-                                        #     installRule(switch, hardTimeOut, srcIP, date, blist )
+                                            switch = suricataInterfaces[parsed['in_iface']]
+
+                                            installRule(switch, hardTimeOut, srcIP, date, blist )
                                     else:
                                         print("Restarting the threshold")
                                         print(f"Time since last period.... {(date - cDate).total_seconds() - threshold}")
                                         dests[srcIP][0] = date
 
                                         # Move mean
-                                        timePeriodsOfZero =  ((date - cDate).total_seconds()- threshold) // 2
                                         
                                         
                                         print(f"Time periods of zero {timePeriodsOfZero}")
@@ -313,7 +309,8 @@ if __name__ == '__main__':
     if (onosMode):
         reflectedSpoofProtectionONOS()
     else:
-        reflectedSpoofProtection()
+        pass
+        # reflectedSpoofProtection()
 
 
 
